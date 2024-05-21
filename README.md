@@ -9,7 +9,7 @@ Berikut adalah Laporan Resmi Praktikum Komunikasi Data & Jaringan Komputer Modul
 
 ---
 
-## DAFTAR ISI
+## Daftar Isi
 - [Topologi](#topologi)
 - [Konfigurasi](#konfigurasi)
 0. [Soal 0](#Soal-0)
@@ -33,79 +33,65 @@ Berikut adalah Laporan Resmi Praktikum Komunikasi Data & Jaringan Komputer Modul
 18. [Soal 18](#Soal-18)
 19. [Soal 19](#Soal-19)
 20. [Soal 20](#Soal-20)
----
-### **Soal 0**
 
----
+## **Soal 0**
 
-### **Soal 1**
 
----
 
-### **Soal 2**
+## **Soal 1**
 
----
 
-### **Soal 3**
 
----
+## **Soal 2**
 
-### **Soal 4**
 
----
 
-### **Soal 5**
+## **Soal 3**
 
----
 
-### **Soal 6**
+## **Soal 4**
 
----
 
-### **Soal 7**
+## **Soal 5**
 
----
 
-### **Soal 8**
+## **Soal 6**
 
----
 
-### **Soal 9**
+## **Soal 7**
 
----
 
-### **Soal 10**
+## **Soal 8**
 
----
 
-### **Soal 11**
+## **Soal 9**
 
----
 
-### **Soal 12**
+## **Soal 10**
 
----
 
-### **Soal 13**
+## **Soal 11**
 
----
 
-### **Soal 14**
+## **Soal 12**
 
----
 
-### **Soal 16**
+## **Soal 13**
 
-### **Soal 17**
 
----
+## **Soal 14**
 
-### **Soal 18**
 
----
+## **Soal 16**
 
-### **Soal 19**
 
----
+## **Soal 17**
 
-### **Soal 20**
+
+## **Soal 18**
+
+
+## **Soal 19**
+
+
+## **Soal 20**
