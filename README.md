@@ -34,9 +34,7 @@ Berikut adalah Laporan Resmi Praktikum Komunikasi Data & Jaringan Komputer Modul
 18. [Soal 18](#Soal-18)
 19. [Soal 19](#Soal-19)
 20. [Soal 20](#Soal-20)
-
 ---
-
 ### **Soal 0**
 
 ---
