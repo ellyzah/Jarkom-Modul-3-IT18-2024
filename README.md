@@ -11,10 +11,8 @@ Berikut adalah Laporan Resmi Praktikum Komunikasi Data & Jaringan Komputer Modul
 
 **DAFTAR ISI**
 ---
-[Topologi](#topologi)
-
-[Konfigurasi](#konfigurasi)
-
+- [Topologi](#topologi)
+- [Konfigurasi](#konfigurasi)
 0. [Soal 0](#Soal-0)
 1. [Soal 1](#Soal-1)
 2. [Soal 2](#Soal-2)
