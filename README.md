@@ -11,11 +11,11 @@ Berikut adalah Laporan Resmi Praktikum Komunikasi Data & Jaringan Komputer Modul
 
 **DAFTAR ISI**
 
-0. [Soal 0](#soal0)
+0. [Soal 0](#Soal-0)
 
-1. [Soal 1](#soal1)
+1. [Soal 1](#Soal-1)
 
-2. [Soal 2](#soal2)
+2. [Soal 2](#Soal-2)
 
 3. [Soal 3](#soal3)
 
