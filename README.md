@@ -903,13 +903,16 @@ ab -n 100 -c 10 -p login.json -T application/json http://atreides.it18.com/api/a
 ```
 
 ### Hasil Soal 19
-`testing1.sh`
+- testing1.sh
+
 ![modul3_soal19test1](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/120791817/4d058750-ae71-4b9e-8e7e-9942080fa775)
 
-`testing2.sh`
+- testing2.sh
+
 ![modul3_soal19test2](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/120791817/89839e98-5326-4560-a021-344a0427df6e)
 
-`testing3.sh`
+- testing3.sh
+
 ![modul3_soal19test3](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/120791817/e0c2de0e-06b0-4968-bd84-c6e57de2e2bb)
 
 ## **Soal 20**
