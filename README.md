@@ -229,11 +229,11 @@ Apabila dilakukan `lynx http://harkonen.it18.com/` pada client Dimitri, maka aka
 
 #### Testing Selain Client Dimitri
 
-![alt text](modul3_soal12b.png)
+![modul3_soal12b](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/120791817/4eb1a593-b529-464d-b606-dac48484af09)
 
 #### Testing pada Client Dimitri
 
-![alt text](modul3_soal12a.png)
+![modul3_soal12a](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/120791817/fa55697b-67e6-4d3d-b4de-b79696197109)
 
 ---
 
@@ -308,7 +308,7 @@ Sesuaikan IP pada `--host=192.242.4.3` dengan IP database server Chani.
 
 ### Hasil Soal 12
 
-![alt text](modul3_13.png)
+![modul3_13](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/120791817/87fe2135-2fa0-467d-9cdd-fae395e07d81)
 
 ---
 
