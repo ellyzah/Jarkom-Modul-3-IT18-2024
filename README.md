@@ -7,8 +7,6 @@ Berikut adalah Laporan Resmi Praktikum Komunikasi Data & Jaringan Komputer Modul
 | Iki Adfi Nur Mohamad | 5027221033 |
 | Siti Nur Ellyzah     | 5027221014 |
 
----
-
 ## Daftar Isi
 
 - [Topologi](#topologi)
@@ -35,6 +33,8 @@ Berikut adalah Laporan Resmi Praktikum Komunikasi Data & Jaringan Komputer Modul
 18. [Soal 18](#Soal-18)
 19. [Soal 19](#Soal-19)
 20. [Soal 20](#Soal-20)
+
+- [Notes](#Notes)
 
 ## **Soal 0**
 
@@ -234,8 +234,6 @@ Apabila dilakukan `lynx http://harkonen.it18.com/` pada client Dimitri, maka aka
 #### Testing pada Client Dimitri
 
 ![modul3_soal12a](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/120791817/fa55697b-67e6-4d3d-b4de-b79696197109)
-
----
 
 ## **Soal 13**
 
@@ -702,8 +700,6 @@ Setelah script selesai dan dijalankan pada masing-masing worker laravel, selanju
 
 ![modul3_soal14](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/120791817/ae7a8264-58ea-4a37-9f9b-e06976f34366)
 
----
-
 ## **Soal 15**
 
 atreides Channel memiliki beberapa endpoint yang harus ditesting sebanyak 100 request dengan 10 request/second. Tambahkan response dan hasil testing pada peta. 
@@ -728,8 +724,6 @@ ab -n 100 -c 10 -p register.json -T application/json http://192.242.2.2:8001/api
 
 ![modul3_soal15](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/120791817/e4f63aeb-8faa-41d1-8c66-4c6978d1f6d2)
 
----
-
 ## **Soal 16**
 
 - POST /auth/login
@@ -752,8 +746,6 @@ ab -n 100 -c 10 -p login.json -T application/json http://192.242.2.2:8001/api/au
 
 ![modul3_soal16](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/120791817/b14b77b0-c852-4e62-8e90-332b5906fa92)
 
----
-
 ## **Soal 17**
 
 GET /me
@@ -771,8 +763,6 @@ ab -n 100 -c 10 -H "Authorization: Bearer $token" http://192.242.2.2:8001/api/me
 ### Hasil Soal 17
 
 ![modul3_soal17](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/120791817/9e22a42e-e6ef-4df9-9eee-f584cb31dbf0)
-
----
 
 ## **Soal 18**
 
@@ -821,8 +811,6 @@ ab  -n 100 -c 10 -p register.json -T application/json http://atreides.it18.com/a
 
 - Jessica
 ![modul3_soal18jessica](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/120791817/b9cc7cb4-c3d8-4915-a9d6-a382a359aff2)
-
----
 
 ## **Soal 19**
 
@@ -923,8 +911,6 @@ ab -n 100 -c 10 -p login.json -T application/json http://atreides.it18.com/api/a
 
 `testing3.sh`
 ![modul3_soal19test3](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/120791817/e0c2de0e-06b0-4968-bd84-c6e57de2e2bb)
-
----
 
 ## **Soal 20**
 
