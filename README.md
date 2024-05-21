@@ -955,20 +955,30 @@ Link Peta IT18 bisa dilihat [di sini! ](https://docs.google.com/document/d/1FOOV
 
 Untuk nomor 11-20 karena dikerjakan terpisah dan router nya memiliki address akhir 0, menggunakan IP Address yang berbeda, dengan list sebagai berikut :
 
-Setup
+**Setup**
+
 Irulam (DNS Server) - 192.242.3.2
+
 Stilgar (Load Balancer) - 192.242.4.2
+
 Mohiam (DHCP Server) - 192.242.3.3
+
 Chani (Database Server) - 192.242.4.3
 
-Laravel Worker
+**Laravel Worker**
+
 Leto (Laravel Worker) - 192.242.2.2
+
 Duncan (Laravel Worker) - 192.242.2.3
+
 Jessica (Laravel Worker) - 192.242.2.4
 
-PHP Worker
+**PHP Worker**
+
 Vladimir (PHP Worker) - 192.242.1.2
+
 Rabban (PHP Worker) - 192.242.1.3
+
 Feyd (PHP Worker) - 192.242.1.4
 
 
