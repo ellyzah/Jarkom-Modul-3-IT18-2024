@@ -1101,6 +1101,7 @@ Setelah itu jalankan dengan command `lynx http://harkonen.it18.com/dune` pada cl
 ### Hasil Soal 11
 
 ![modul3_11](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/120791817/840251e5-598c-4f4e-8e86-09f0730336fa)
+
 ---
 
 ## **Soal 12**
@@ -1219,6 +1220,7 @@ Apabila dilakukan `lynx http://harkonen.it18.com/` pada client Dimitri, maka aka
 #### Testing pada Client Dimitri
 
 ![modul3_soal12a](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/120791817/fa55697b-67e6-4d3d-b4de-b79696197109)
+
 ---
 
 ## **Soal 13**
@@ -1685,6 +1687,7 @@ Setelah script selesai dan dijalankan pada masing-masing worker laravel, selanju
 ### Hasil Soal 14
 
 ![modul3_soal14](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/120791817/ae7a8264-58ea-4a37-9f9b-e06976f34366)
+
 ---
 
 ## **Soal 15**
@@ -1710,6 +1713,7 @@ ab -n 100 -c 10 -p register.json -T application/json http://192.242.2.2:8001/api
 ### Hasil Soal 15
 
 ![modul3_soal15](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/120791817/e4f63aeb-8faa-41d1-8c66-4c6978d1f6d2)
+
 ---
 
 ## **Soal 16**
@@ -1733,6 +1737,7 @@ ab -n 100 -c 10 -p login.json -T application/json http://192.242.2.2:8001/api/au
 ### Hasil Soal 16
 
 ![modul3_soal16](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/120791817/b14b77b0-c852-4e62-8e90-332b5906fa92)
+
 ---
 
 ## **Soal 17**
@@ -1752,6 +1757,7 @@ ab -n 100 -c 10 -H "Authorization: Bearer $token" http://192.242.2.2:8001/api/me
 ### Hasil Soal 17
 
 ![modul3_soal17](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/120791817/9e22a42e-e6ef-4df9-9eee-f584cb31dbf0)
+
 ---
 
 ## **Soal 18**
@@ -1801,6 +1807,7 @@ ab  -n 100 -c 10 -p register.json -T application/json http://atreides.it18.com/a
 
 - Jessica
 ![modul3_soal18jessica](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/120791817/b9cc7cb4-c3d8-4915-a9d6-a382a359aff2)
+
 ---
 
 ## **Soal 19**
@@ -1905,6 +1912,7 @@ ab -n 100 -c 10 -p login.json -T application/json http://atreides.it18.com/api/a
 - testing3.sh
 
 ![modul3_soal19test3](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/120791817/e0c2de0e-06b0-4968-bd84-c6e57de2e2bb)
+
 ---
 
 ## **Soal 20**
@@ -1940,17 +1948,21 @@ Setelah itu jalankan pada Stilgar, lalu testing menggunakan command berikut pada
 ```
 ab -n 100 -c 10 -p login.json -T application/json http://atreides.it18.com/api/auth/login
 ```
+
 ---
+
 ## **Kendala**
 - Terkadang bash `<script>.sh` sering error, awal-awal pengerjaan memang masih bisa, tetapi lama kelamaan terjadi error. Jadi harus dijalankan di hidden root. Bisa dibuat dan dijalankan dengan `nano /root/.bashrc` dan `source /root/.bashrc`
+
 ---
+
 ## **Notes**
 
 Apabila tidak ingin script menghilang masuk ke dalam root terlebih dahulu dengan `cd`. 'semoga'
 
 Untuk nomor 0 - 10, disetiap awal mulai konfigurasi, diwajibkan untuk menjalankan `script.sh` mengantisipasi error pada command selanjutnya, isi `script.sh` bisa disesuaikan dengan bagian-bagian pengerjaan.
 
-Link Peta IT18 bisa dilihat [di sini! ](https://docs.google.com/document/d/1FOOV__UZe9O7gNeBkyqqwQiV6qZvSQbuiZW1eFQZbzI/edit)
+Link Peta IT18 bisa dilihat [di sini! ](https://docs.google.com/document/d/1rr2sojHuQ5QvsLBgPMSe74EFLzLnCBEr8_r42Z7H5xA/edit?usp=sharing)
 
 Untuk nomor 11-20 karena dikerjakan terpisah dan router nya memiliki address akhir 0, menggunakan IP Address yang berbeda, dengan list sebagai berikut :
 
