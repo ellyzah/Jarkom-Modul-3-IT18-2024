@@ -37,7 +37,7 @@ Berikut adalah Laporan Resmi Praktikum Komunikasi Data & Jaringan Komputer Modul
 ---
 
 # Topologi
-![topologi](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\topologi.png)
+![topologi](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/263daa4a-e898-485b-bfc0-02b04ec51de9)
 
 ---
 
@@ -178,15 +178,15 @@ apt-get install isc-dhcp-relay -y
 
 - Gunakan `./relay.sh`, akan muncul tampilan seperti ini maka bisa diisi dengan IP DHCP yaitu IP dari Mohiam `192.242.3.1`.
 
-![relay_1](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\relay_1.png)
+![relay_1](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/f92c4988-5a01-47e9-b874-7192902215ec)
 
 Untuk ini bisa isi dengan `eth1 eth2 eth3`
 
-![relay_2](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\relay_2.png)
+![relay_2](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/a1fc0886-fe00-4aaa-914b-e11bff65bc63)
 
 Dan ini bisa lanjut klik `Enter`
 
-![relay_3](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\relay_3.png)
+![relay_3](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/a0a21721-c10c-43d8-9888-3641db989fea)
 
 - Selanjutnya jalankan `sysctl.sh` yang berisikan konfigurasi dari Arakis untuk Mohiam (DHCP Server) dengan command `./sysctl.sh`. 
 
@@ -209,7 +209,7 @@ service isc-dhcp-relay restart
 
 Maka akan muncul output seperti ini :
 
-![sysctl](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\sysctl.png)
+![sysctl](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/0f8a1b5f-892c-4954-b650-659684419351)
 
 - Setelah setup Arakis kita akan setup config ke Irulan yang bertugas sebagai DNS Server.
 
@@ -293,8 +293,8 @@ service bind9 restart
 
 - Jalankan `./scriptNamed.sh`, setelahnya bisa cek ping `atreides.it18.com` dan `harkonen.it18.com` di Client Paul / Vladimir, apabila berhasil maka akan tampil hasil ping sebagai berikut :
 
-![nomor0_1](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\nomor0_1.png)
-![nomor0_2](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\nomor0_2.png)
+![nomor0_1](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/686df21f-6c17-4cfc-966f-05b8a82625f8)
+![nomor0_2](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/4b9ef8ea-b638-47a1-8b04-2c6814c60f83)
 
 ---
 
@@ -372,25 +372,25 @@ service isc-dhcp-server start
 
 - Jalankan `setupSubnet.sh` dan akan muncul output seperti ini.
 
-![nomor5](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\nomor5.png)
+![nomor5](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/061f587f-c139-435a-8cbb-a113d2c5d8b7)
 
 - Untuk pengecekan apakah sudah terhubung, bisa ping dari Client (Paul / Dmitri)
 
 - Setup Client Paul & Dmitri
 
-![setupPaulDmitri](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\setupPaulDmitri.png)
+![setupPaulDmitri](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/4cd0d734-df64-43f0-a820-565d25b0fa3c)
 
 192.242.3.2 adalah IP Irulan
 
 - Hasil ping Client Paul
 
-![nomor5Paul](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\nomor5Paul.png)
-![nomor5Paul_2](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\nomor5Paul_2.png)
+![nomor5Paul](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/3e8a916e-1f50-4954-9ba9-973d693b1e3d)
+![nomor5Paul_2](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/19d99a10-0497-4460-9561-f57511778595)
 
 - Hasil ping Client Dmitri
 
-![nomor5Dmitri](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\nomor5Dmitri.png)
-![nomor5Dmitri_2](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\nomor5Dmitri_2.png)
+![nomor5Dmitri](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/26018f0f-a1f9-4871-a26f-e9c34b0e61dd)
+![nomor5Dmitri_2](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/cea7437f-87df-4c83-b992-9f7e0eb22cae)
 
 ---
 
@@ -450,12 +450,12 @@ echo 'server {
 
 - Dan testing dengan `lynx localhost`, apabila muncul tampilan seperti ini maka sudah berhasil.
 
-![localhostVladimir](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\localhostVladimir.png)
+![localhostVladimir](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/ebaa1133-2a9c-4cb5-aad3-18e8ce4f4be2)
 
 - Untuk PHP Worker Rabban dan Feyd lakukan setup konfigurasi yang sama. Setelah ditest apabila tampilan seperti ini maka sudah berhasil.
 
-![localhostRabban](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\localhostRabban.png)
-![localhostFeyd](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\localhostFeyd.png)
+![localhostRabban](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/39537c02-3f1a-462e-bbb9-270ee9bb2379)
+![localhostFeyd](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/8c4a984b-5508-4f10-90a0-1908511a8a74)
 
 ---
 
@@ -528,7 +528,8 @@ service nginx restart
 ```
 
 - Jika muncul tampilan seperti ini maka bisa lanjut ke langkah selanjutnya.
-![setupStilgar](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\setupStilgar.png)
+
+![setupStilgar](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/be2ba8fa-6db7-4626-9a02-7b0148fc0b06)
 
 - Karena DNS berpindah ke IP Load Balancer maka diperlukan penyesuaian untuk pemindahan di Irulan.
 
@@ -577,7 +578,8 @@ service bind9 restart
 ```
 
 - Jalankan `no7.sh` di Irulan dan apabila muncul seperti ini maka setup sudah berhasil.
-![no7](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\no7.png)
+
+![no7](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/e4a78df1-8431-45e2-8ebf-d9a6bed6ab23)
 
 - Selanjutnya akan di tes pada client untuk uji testing.
 
@@ -593,8 +595,9 @@ apt-get install jq -y
 ```
 
 - Jalankan `no7.sh` dan berikan command `ab -n 5000 -c 150 http://harkonen.it18.com/` untuk request 5000 request dan 150 request/second. Hasil akan terlihat seperti dibawah ini.
-![no7Dmitri](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\no7Dmitri.png)
-![no7Paul](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\no7Paul.png)
+
+![no7Dmitri](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/fd34678e-8e1a-4f0c-8551-f1d5b82eeb93)
+![no7Paul](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/22e5d319-2721-4469-9a28-85ba47081629)
 
 *nb: untuk hasil output `ab` nomor 7 - 9 sebetulnya akan kurang lebih sama persis, hanya berbeda pada permintaan request yang disesuaikan soal saja*
 
@@ -793,19 +796,24 @@ service nginx restart
 - Apabila berhasil maka akan menampilkan output berikut : 
 
 a. Hasil Testing Generic Hash
-![generichash](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\generichash.png)
+
+![generichash](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/38ee8449-5d61-48ca-b414-5d4f6e13e1f4)
 
 b. Hasil Testing IP Hash
-![iphash](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\iphash.png)
+
+![iphash](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/4f3fc700-0247-492c-9cbc-8e8ec31d7e10)
 
 c. Hasil Testing Least Connection
-![least](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\least.png)
+
+![least](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/6fc218e7-2a57-4d37-85aa-5253eb57660f)
 
 d. Hasil Testing Round Robin
-![roundrobin](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\roundrobin.png)
+
+![roundrobin](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/fe86bcfc-3bb3-421d-bcb9-1fd4b1425e35)
 
 - Untuk Grafik Request Per Second seperti diagram batang berikut.
-![grafik](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\grafik.png)
+
+![grafik](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/585e4113-68af-46c5-8843-fdec80082986)
 
 - Analisis bisa dicek pada link yang tertera di [Notes](#notes)
 ---
@@ -951,13 +959,20 @@ service nginx restart
 
 - Apabila berhasil maka akan menampilkan output berikut : 
 a. Hasil Testing Dengan 1 Worker
-![dengan1worker](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\dengan1worker.png)
+
+![dengan1worker](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/bea50ff1-29cd-43d1-9a8c-bdbd93fc32ab)
 
 b. Hasil Testing Dengan 2 Worker
-![dengan2worker](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\dengan2worker.png)
+
+![dengan2worker](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/bc9e137b-5929-4c74-bd54-84ea72872cd8)
 
 c. Hasil Testing Dengan 3 Worker
-![dengan3worker](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\dengan3worker.png)
+
+![dengan3worker](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/a24a3e1e-d7a8-4cb3-8898-e35d3c8bfdc1)
+
+- Berikut merupakan hasil untuk Grafik Request Per-Second Testing Worker
+
+![grafik_2](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/8bbefde6-bf51-4f80-b95c-68cf69ec3f93)
 
 ---
 
@@ -976,7 +991,8 @@ htpasswd -c /etc/nginx/supersecret/htpasswd secmart
 ```
 
 - Setelahnya akan muncul perintah untuk permintaan password. Sesuai dengan soal maka password yang diinputkan adalah `kcksit18`.
-![inputpassword](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\inputpassword.png)
+
+![inputpassword](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/c2f5bd55-cdc9-424d-ad00-a634bbcfd623)
 
 - Kemudian buat script konfigurasi baru di `.bashrc` untuk `no10Lanjut.sh`
 
@@ -1024,21 +1040,26 @@ service nginx restart
 ```
 
 - Setelah tampilan seperti ini maka kita akan lanjut testing di Client.
-![no10Lanjut](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\no10Lanjut.png)
+
+![no10Lanjut](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/fcd43c20-809d-40ef-ac3a-b40b7567e4b9)
 
 - Lakukan testing di Dmitri, jalankan `script.sh`, dan command `lynx harkonen.it18.com`.
 
 - Pertama akan muncul Alert warning seperti ini.
-![alert](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\alert.png)
+
+![alert](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/4d802c8e-ab52-4f9c-9e09-2ac24ffddbaa)
 
 - Setelahnya akan muncul tampilan ini dan masukkan username `secmart`.
-![secmart](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\secmart.png)
+
+![secmart](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/9becf833-3f8c-4b0f-b520-87a27beff109)
 
 - Input password `kcksit18`
-![password](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\password.png)
+
+![password](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/0ed42852-f6b1-4da7-b48e-0a0fcdeaef5e)
 
 - Apabila sudah seperti ini artinya sudah berhasil.
-![no10](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\no10.png)
+
+![no10](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/124652107/410b21c4-bd69-4694-acb4-563a14a5ec5c)
 
 ---
 
