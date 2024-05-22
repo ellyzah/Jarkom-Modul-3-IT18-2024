@@ -6,57 +6,1034 @@ Berikut adalah Laporan Resmi Praktikum Komunikasi Data & Jaringan Komputer Modul
 | -------------------- | ---------- |
 | Iki Adfi Nur Mohamad | 5027221033 |
 | Siti Nur Ellyzah     | 5027221014 |
+---
 
 ## Daftar Isi
 
 - [Topologi](#topologi)
 - [Konfigurasi](#konfigurasi)
 
-0. [Soal 0](#Soal-0)
-1. [Soal 1](#Soal-1)
-2. [Soal 2](#Soal-2)
-3. [Soal 3](#Soal-3)
-4. [Soal 4](#Soal-4)
-5. [Soal 5](#Soal-5)
-6. [Soal 6](#Soal-6)
-7. [Soal 7](#Soal-7)
-8. [Soal 8](#Soal-8)
-9. [Soal 9](#Soal-9)
-10. [Soal 10](#Soal-10)
-11. [Soal 11](#Soal-11)
-12. [Soal 12](#Soal-12)
-13. [Soal 13](#Soal-13)
-14. [Soal 14](#Soal-14)
-15. [Soal 15](#Soal-15)
-16. [Soal 16](#Soal-16)
-17. [Soal 17](#Soal-17)
-18. [Soal 18](#Soal-18)
-19. [Soal 19](#Soal-19)
-20. [Soal 20](#Soal-20)
+0. [Soal 0 - 1](#soal-0---1)
+1. [Soal 2 - 5](#Soal-2---5)
+2. [Soal 6](#soal-6)
+3. [Soal 7](#soal-7)
+4. [Soal 8](#soal-8)
+5. [Soal 9](#soal-9)
+6. [Soal 10](#soal-10)
+7. [Soal 11](#Soal-11)
+8. [Soal 12](#Soal-12)
+9. [Soal 13](#Soal-13)
+10. [Soal 14](#Soal-14)
+11. [Soal 15](#Soal-15)
+12. [Soal 16](#Soal-16)
+13. [Soal 17](#Soal-17)
+14. [Soal 18](#Soal-18)
+15. [Soal 19](#Soal-19)
+16. [Soal 20](#Soal-20)
 
 - [Notes](#Notes)
+- [Kendala](#kendala)
+---
 
-## **Soal 0**
+# Topologi
+![topologi](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\topologi.png)
+---
 
-## **Soal 1**
+# Konfigurasi
+- Arakis (Router (DHCP Relay))
+```
+auto eth0
+iface eth0 inet dhcp
+up iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 192.242.0.0/16
 
-## **Soal 2**
+auto eth1
+iface eth1 inet static
+	address 192.242.1.0
+	netmask 255.255.255.0
 
-## **Soal 3**
+auto eth2
+iface eth2 inet static
+	address 192.242.2.0
+	netmask 255.255.255.0
 
-## **Soal 4**
+auto eth3
+iface eth3 inet static
+	address 192.242.3.0
+	netmask 255.255.255.0
 
-## **Soal 5**
+auto eth4
+iface eth4 inet static
+	address 192.242.4.0
+	netmask 255.255.255.0
+```
+- Mohiam (DHCP Server)
+```
+auto eth0
+iface eth0 inet static
+	address 192.242.3.1
+	netmask 255.255.255.0
+	gateway 192.242.3.0
+```
+- Irulan (DNS Server)
+```
+auto eth0
+iface eth0 inet static
+	address 192.242.3.2
+	netmask 255.255.255.0
+	gateway 192.242.3.0
+```
+- Chani (Database Server)
+```
+auto eth0
+iface eth0 inet static
+	address 192.242.4.1
+	netmask 255.255.255.0
+	gateway 192.242.4.0
+```
+- Stilgar (Load Balancer)
+```
+auto eth0
+iface eth0 inet static
+	address 192.242.4.2
+	netmask 255.255.255.0
+	gateway 192.242.4.0
+```
+- Leto (Laravel Worker)
+```
+auto eth0
+iface eth0 inet static
+	address 192.242.2.2
+	netmask 255.255.255.0
+	gateway 192.242.2.0
+```
+- Duncan (Laravel Worker)
+```
+auto eth0
+iface eth0 inet static
+	address 192.242.2.3
+	netmask 255.255.255.0
+	gateway 192.242.2.0
+```
+- Jessica (Laravel Worker)
+```
+auto eth0
+iface eth0 inet static
+	address 192.242.2.4
+	netmask 255.255.255.0
+	gateway 192.242.2.0
+```
+- Vladimir (PHP Worker)
+```
+auto eth0
+iface eth0 inet static
+	address 192.242.1.2
+	netmask 255.255.255.0
+	gateway 192.242.1.0
+```
+- Rabban (PHP Worker)
+```
+auto eth0
+iface eth0 inet static
+	address 192.242.1.3
+	netmask 255.255.255.0
+	gateway 192.242.1.0
+```
+- Feyd (PHP Worker)
+```
+auto eth0
+iface eth0 inet static
+	address 192.242.1.4
+	netmask 255.255.255.0
+	gateway 192.242.1.0
+```
+- Dmitri & Paul(Client)
+```
+auto eth0
+iface eth0 inet dhcp
+```
+---
+
+## **Soal 0 - 1**
+> Planet Caladan sedang mengalami krisis karena kehabisan spice, klan atreides berencana untuk melakukan eksplorasi ke planet arakis dipimpin oleh duke leto mereka meregister domain name atreides.yyy.com untuk worker Laravel mengarah pada Leto Atreides . Namun ternyata tidak hanya klan atreides yang berusaha melakukan eksplorasi, Klan harkonen sudah mendaftarkan domain name harkonen.yyy.com untuk worker PHP (0) mengarah pada Vladimir Harkonen
+
+> Lakukan konfigurasi sesuai dengan peta yang sudah diberikan.
+
+
+- Sebelum ini kita bisa melakukan setup untuk konfigurasi DHCP Server di Arakis, untuk ini bisa dibuat dan input dalam script berikut :
+
+**script.sh**
+```
+echo nameserver 192.168.122.1 > /etc/resolv.conf
+echo /etc/resolv.conf
+```
+
+- Setelahnya jalankan dengan command `./script.sh` dan jalankan script `relay.sh` yang berisikan dependensi.
+
+**relay.sh**
+```
+apt-get update
+apt-get install isc-dhcp-relay -y
+```
+
+- Gunakan `./relay.sh`, akan muncul tampilan seperti ini maka bisa diisi dengan IP DHCP yaitu IP dari Mohiam `192.242.3.1`.
+
+![relay_1](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\relay_1.png)
+
+Untuk ini bisa isi dengan `eth1 eth2 eth3`
+
+![relay_2](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\relay_2.png)
+
+Dan ini bisa lanjut klik Enter
+
+![relay_3](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\relay_3.png)
+
+- Selanjutnya jalankan `sysctl.sh` yang berisikan konfigurasi dari Arakis untuk Mohiam (DHCP Server) dengan command `./sysctl.sh`. 
+
+**sysctl.sh**
+```
+#!/bin/bash
+
+cat > /etc/default/isc-dhcp-relay << EOL
+SERVERS="192.242.3.1" #IP Mohiam (DHCP Server)
+INTERFACES="eth1 eth2 eth3"
+OPTIONS=
+EOL
+
+cat > /etc/sysctl.conf << EOL
+    echo net.ipv4.ip_forward=1
+EOL
+
+service isc-dhcp-relay restart
+```
+
+Maka akan muncul output seperti ini :
+
+![sysctl](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\sysctl.png)
+
+- Setelah setup Arakis kita akan setup config ke Irulan yang bertugas sebagai DNS Server.
+
+- Buat `script.sh` kembali.
+
+**script.sh**
+```
+#!/bin/bash
+
+echo nameserver 192.168.122.1 > /etc/resolv.conf
+cat > /etc/resolv.conf
+```
+- Jalankan `script.sh` dan buat konfigurasi baru yaitu `scriptNamed.sh`.
+
+**scriptNamed.sh**
+```
+apt-get update
+apt-get install bind9 -y
+
+forward="options {
+directory \"/var/cache/bind\";
+forwarders {
+  	   192.168.122.1;
+};
+
+allow-query{any;};
+listen-on-v6 { any; };
+};
+"
+echo "$forward" > /etc/bind/named.conf.options
+
+echo "zone \"atreides.it18.com\" {
+	type master;
+	file \"/etc/bind/jarkom/atreides.it18.com\";
+};
+
+zone \"harkonen.it18.com\" {
+	type master;
+	file \"/etc/bind/jarkom/harkonen.it18.com\";
+};
+" > /etc/bind/named.conf.local
+
+mkdir /etc/bind/jarkom
+
+atreides="
+;
+;BIND data file for local loopback interface
+;
+\$TTL    604800
+@    IN    SOA    atreides.it18.com. root.atreides.it18.com. (
+        2        ; Serial
+                604800        ; Refresh
+                86400        ; Retry
+                2419200        ; Expire
+                604800 )    ; Negative Cache TTL
+;                   
+@    IN    NS    atreides.it18.com.
+@       IN    A    192.242.2.1  ; IP LETO
+"
+echo "$atreides" > /etc/bind/jarkom/atreides.it18.com
+
+harkonen="
+;
+;BIND data file for local loopback interface
+;
+\$TTL    604800
+@    IN    SOA    harkonen.it18.com. root.harkonen.it18.com. (
+        2        ; Serial
+                604800        ; Refresh
+                86400        ; Retry
+                2419200        ; Expire
+                604800 )    ; Negative Cache TTL
+;                   
+@    IN    NS    harkonen.it18.com.
+@       IN    A    192.242.1.1  ; IP VLADIMIR
+"
+echo "$harkonen" > /etc/bind/jarkom/harkonen.it18.com
+
+service bind9 restart
+```
+
+- Jalankan `./scriptNamed.sh`, setelahnya bisa cek ping `atreides.it18.com` dan `harkonen.it18.com` di Client Paul / Vladimir, apabila berhasil maka akan tampil hasil ping sebagai berikut :
+
+![nomor0_1](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\nomor0_1.png)
+![nomor0_2](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\nomor0_2.png)
+---
+
+## **Soal 2 - 5**
+> Kemudian, karena masih banyak spice yang harus dikumpulkan, bantulah para aterides untuk bersaing dengan harkonen dengan kriteria berikut.:
+- Semua CLIENT harus menggunakan konfigurasi dari DHCP Server.
+- Client yang melalui House Harkonen mendapatkan range IP dari [prefix IP].1.14 - [prefix IP].1.28 dan [prefix IP].1.49 - [prefix IP].1.70 (2)
+- Client yang melalui House Atreides mendapatkan range IP dari [prefix IP].2.15 - [prefix IP].2.25 dan [prefix IP].2 .200 - [prefix IP].2.210 (3)
+- Client mendapatkan DNS dari Princess Irulan dan dapat terhubung dengan internet melalui DNS tersebut (4)
+Durasi DHCP server meminjamkan alamat IP kepada Client yang melalui House Harkonen selama 5 menit sedangkan pada client yang melalui House Atreides selama 20 menit. Dengan waktu maksimal dialokasikan untuk peminjaman alamat IP selama 87 menit (5)
+_*house == switch_
+
+- Untuk soal ini pertama-tama lakukan setup konfigurasi di Mohiam (DHCP Server). Buat script baru `setupSubnet.sh`.
+Script ini berisi instalasi dependensi dibagian `apt-get` dan interfaces v4 dari `eth0`.
+
+**setupSubnet.sh**
+```
+#!/bin/bash
+
+apt-get update
+apt-get install isc-dhcp-server -y
+
+cat >/etc/default/isc-dhcp-server <<EOL
+    echo INTERFACESv4="eth0"
+EOL
+
+cat >/etc/dhcp/dhcpd.conf <<EOL
+    option domain-name "example.org";
+option domain-name-servers ns1.example.org, ns2.example.org;
+
+ddns-update-style none;
+
+subnet 192.242.1.0 netmask 255.255.255.0 {
+    range 192.242.1.14 192.242.1.28;
+    range 192.242.1.49 192.242.1.70;
+    option routers 192.242.1.0;
+    option broadcast-address 192.242.1.255;
+    option domain-name-servers 192.242.3.2;
+    default-lease-time 300;
+    max-lease-time 5220; 
+}
+
+subnet 192.242.2.0 netmask 255.255.255.0 {
+    range 192.242.2.15 192.242.2.25;
+    range 192.242.2.200 192.242.2.210;
+    option routers 192.242.2.0;
+    option broadcast-address 192.242.2.255;
+    option domain-name-servers 192.242.3.2;
+    default-lease-time 1200;
+    max-lease-time 5220;
+}
+
+subnet 192.242.3.0 netmask 255.255.255.0 {
+    
+}
+
+subnet 192.242.4.0 netmask 255.255.255.0 {
+    
+}
+
+# host Paul {
+#     hardware ethernet de:51:76:82:95:6b;
+#     fixed-address 192.242.1.37;
+# }
+
+EOL
+
+service isc-dhcp-server stop
+service isc-dhcp-server start
+```
+
+- Kemudian untuk Nomor 2, terletak pada bagian `subnet 192.242.1.0 netmask 255.255.255.0` dengan permintaan range dan waktu dari soal.
+
+- Sama seperti Nomor 3, terletak pada bagian `subnet 192.242.2.0 netmask 255.255.255.0` dengan permintaan range dan waktu dari soal.
+
+- Jalankan `setupSubnet.sh` dan akan muncul output seperti ini.
+
+![nomor5](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\nomor5.png)
+
+- Untuk pengecekan apakah sudah terhubung, bisa ping dari Client (Paul / Dmitri)
+
+- Setup Client Paul & Dmitri
+
+![setupPaulDmitri](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\setupPaulDmitri.png)
+
+192.242.3.2 adalah IP Irulan
+
+- Hasil ping Client Paul
+
+![nomor5Paul](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\nomor5Paul.png)
+![nomor5Paul_2](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\nomor5Paul_2.png)
+
+- Hasil ping Client Dmitri
+
+![nomor5Dmitri](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\nomor5Dmitri.png)
+![nomor5Dmitri_2](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\nomor5Dmitri_2.png)
+---
 
 ## **Soal 6**
+> Seiring berjalannya waktu kondisi semakin memanas, untuk bersiap perang. Klan Harkonen melakukan deployment sebagai berikut : 
+- Vladimir Harkonen memerintahkan setiap worker(harkonen) PHP, untuk melakukan konfigurasi virtual host untuk website berikut dengan menggunakan php 7.3. (6)
+
+- Untuk soal ini kita bisa setup konfigurasi di Vladimir dengan `script.sh` dengan menggunakan command `nano /root/.bashrc`.
+
+```
+echo nameserver 192.242.3.2 > /etc/resolv.conf
+
+apt-get update
+apt-get install nginx -y
+apt-get install lynx -y
+apt-get install php php-fpm -y
+apt-get install wget -y
+apt-get install unzip -y
+service nginx start
+service php7.3-fpm start
+
+wget -O '/var/www/harkonen.it18.com' 'https://drive.usercontent.google.com/u/0/uc?id=1lmnXJUbyx1JDt2OA5z_1dEowxozfkn30&export=download'
+unzip -o /var/www/harkonen.it18.com -d /var/www/
+rm /var/www/harkonen.it18.com
+mv /var/www/modul-3 /var/www/harkonen.it18.com
+
+source /root/script.sh
+/root/script.sh
+cp /etc/nginx/sites-available/default /etc/nginx/sites-available/harkonen.it18.com
+ln -s /etc/nginx/sites-available/harkonen.it18.com /etc/nginx/sites-enabled/
+rm /etc/nginx/sites-enabled/default
+
+echo 'server {
+     listen 80;
+     server_name _;
+
+     root /var/www/harkonen.it18.com;
+     index index.php index.html index.htm;
+
+     location / {
+         try_files $uri $uri/ /index.php?$query_string;
+     }
+
+     location ~ \.php$ {
+         include snippets/fastcgi-php.conf;
+         fastcgi_pass unix:/run/php/php7.3-fpm.sock;
+         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+         include fastcgi_params;
+     }
+ }' > /etc/nginx/sites-available/harkonen.it18.com
+
+ service nginx restart
+```
+192.242.3.2 adalah IP Irulan, bagian `apt-get` adalah fungsi dependensi, bagian `wget` merupakan proses download zip dan instalasi konfigurasi virtual host untuk *php 7.3* sesuai pada permintaan soal, bagian `source /root/script.sh` merupakan penggantian default menjadi konfigurasi sesuai file yang sudah didownload sebelumnya dan terakhir yang adalah bagian dari isi server.
+
+- Selanjutnya jalankan script tersebut dengan `source /root/.bashrc`.
+
+- Dan testing dengan `lynx localhost`, apabila muncul tampilan seperti ini maka sudah berhasil.
+
+![localhostVladimir](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\localhostVladimir.png)
+
+- Untuk PHP Worker Rabban dan Feyd lakukan setup konfigurasi yang sama. Setelah ditest apabila tampilan seperti ini maka sudah berhasil.
+
+![localhostRabban](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\localhostRabban.png)
+![localhostFeyd](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\localhostFeyd.png)
+---
 
 ## **Soal 7**
+> Aturlah agar Stilgar dari Freemen dapat dapat bekerja sama dengan maksimal, lalu lakukan testing dengan 5000 request dan 150 request/second. (7)
+
+- Untuk nomor ini lakukan setup konfigurasi pada Stilgar (Load Balancer) dan Client.
+
+- Setup Stilgar, jalankan `script.sh` dan `setup.sh`.
+
+**script.sh**
+```
+#!/bin/bash
+
+echo nameserver 192.168.122.1 > /etc/resolv.conf
+echo nameserver 192.242.3.2   > /etc/resolv.conf # IP Irulan (DNS Server)
+```
+
+**setup.sh**
+```
+apt-get update
+apt-get install apache2-utils -y
+apt-get install nginx -y
+apt-get install lynx -y
+```
+
+- Setelahnya, lanjut untuk setup di `.bashrc` untuk `stilgar.sh`.
+
+**stilgar.sh**
+```
+# Salin file konfigurasi default ke lb_php
+cp /etc/nginx/sites-available/default /etc/nginx/sites-available/lb_php
+
+# Tambahkan konfigurasi load balancing ke dalam lb_php
+cat <<EOL > /etc/nginx/sites-available/lb_php
+upstream worker {
+    server 192.242.1.1;
+    server 192.242.1.2;
+    server 192.242.1.3;
+}
+
+server {
+    listen 80;
+    server_name harkonen.it18.com www.harkonen.it18.com;
+
+    root /var/www/html;
+
+    index index.html index.htm index.nginx-debian.html;
+
+    location / {
+        proxy_pass http://worker;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto \$scheme;
+    }
+}
+EOL
+
+# Aktifkan konfigurasi baru
+ln -sf /etc/nginx/sites-available/lb_php /etc/nginx/sites-enabled/
+
+# Hapus konfigurasi default jika ada
+if [ -f /etc/nginx/sites-enabled/default ]; then
+    rm /etc/nginx/sites-enabled/default
+fi
+
+# Restart layanan Nginx untuk menerapkan perubahan
+service nginx restart
+```
+
+- Jika muncul tampilan seperti ini maka bisa lanjut ke langkah selanjutnya.
+![setupStilgar](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\setupStilgar.png)
+
+- Karena DNS berpindah ke IP Load Balancer maka diperlukan penyesuaian untuk pemindahan di Irulan.
+
+- Setup untuk Irulan dengan script baru `no7.sh`.
+
+**no7.sh**
+```
+atreides="
+;
+;BIND data file for local loopback interface
+;
+\$TTL    604800
+@    IN    SOA    atreides.it18.com. root.atreides.it18.com. (
+        2        ; Serial
+                604800        ; Refresh
+                86400        ; Retry
+                2419200        ; Expire
+                604800 )    ; Negative Cache TTL
+;
+@    IN    NS    atreides.it18.com.
+@       IN    A    192.242.4.2 ; IP STILGAR
+"
+echo "$atreides" > /etc/bind/jarkom/atreides.it18.com
+
+harkonen="
+;
+;BIND data file for local loopback interface
+;
+\$TTL    604800
+@    IN    SOA    harkonen.it18.com. root.harkonen.it18.com. (
+        2        ; Serial
+                604800        ; Refresh
+                86400        ; Retry
+                2419200        ; Expire
+                604800 )    ; Negative Cache TTL
+;
+@    IN    NS    harkonen.it18.com.
+@       IN    A    192.242.4.2 ; IP STILGAR
+"
+echo "$harkonen" > /etc/bind/jarkom/harkonen.it18.com
+
+
+# RESTART
+
+service bind9 restart
+```
+
+- Jalankan `no7.sh` di Irulan dan apabila muncul seperti ini maka setup sudah berhasil.
+![no7](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\no7.png)
+
+- Selanjutnya akan di tes pada client untuk uji testing.
+
+- Setup Dmitri, jalankan `script.sh` dan buat script `no7.sh` untuk install dependensi.
+
+**no7.sh**
+```
+apt update
+apt install lynx -y
+apt install htop -y
+apt install apache-utils -y
+apt-get install jq -y
+```
+
+- Jalankan `no7.sh` dan berikan command `ab -n 5000 -c 150 http://harkonen.it18.com/` untuk request 5000 request dan 150 request/second. Hasil akan terlihat seperti dibawah ini.
+![no7Dmitri](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\no7Dmitri.png)
+![no7Paul](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\no7Paul.png)
+
+*nb: untuk hasil output `ab` nomor 7 - 9 sebetulnya akan kurang lebih sama persis, hanya berbeda pada permintaan request yang disesuaikan soal saja*
+---
 
 ## **Soal 8**
+> Karena diminta untuk menuliskan peta tercepat menuju spice, buatlah analisis hasil testing dengan 500 request dan 50 request/second masing-masing algoritma Load Balancer dengan ketentuan sebagai berikut:
+a. Nama Algoritma Load Balancer
+b. Report hasil testing pada Apache Benchmark
+c. Grafik request per second untuk masing masing algoritma. 
+d. Analisis (8)
+
+- Masih dengan konfigurasi yang kurang lebih sama dengan nomor 7, hanya berbeda pada konfigurasi sesuai algoritma yang perlu disesuaikan saja. Perubahan ini disimpan discript `bash.rc`.
+
+- a. Algoritma Generic Hash
+```
+# Salin file konfigurasi default ke lb_php
+cp /etc/nginx/sites-available/default /etc/nginx/sites-available/lb_php
+
+# Tambahkan konfigurasi load balancing ke dalam lb_php
+# GENERIC HASH
+cat <<EOL > /etc/nginx/sites-available/lb_php
+upstream worker {
+    hash $request_uri consistent;
+    server 192.242.1.1;
+    server 192.242.1.2;
+    server 192.242.1.3;
+}
+
+server {
+    listen 80;
+    server_name harkonen.it18.com www.harkonen.it18.com;
+
+    root /var/www/html;
+
+    index index.html index.htm index.nginx-debian.html;
+
+    location / {
+        proxy_pass http://worker;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto \$scheme;
+    }
+}
+EOL
+
+# Aktifkan konfigurasi baru
+ln -sf /etc/nginx/sites-available/lb_php /etc/nginx/sites-enabled/
+
+# Hapus konfigurasi default jika ada
+if [ -f /etc/nginx/sites-enabled/default ]; then
+    rm /etc/nginx/sites-enabled/default
+fi
+
+# Restart layanan Nginx untuk menerapkan perubahan
+service nginx restart
+```
+
+b. Algoritma IP Hash
+```
+# Salin file konfigurasi default ke lb_php
+cp /etc/nginx/sites-available/default /etc/nginx/sites-available/lb_php
+
+# Tambahkan konfigurasi load balancing ke dalam lb_php
+# IP HASH
+cat <<EOL > /etc/nginx/sites-available/lb_php
+upstream worker {
+    ip_hash;
+    server 192.242.1.1;
+    server 192.242.1.2;
+    server 192.242.1.3;
+}
+
+server {
+    listen 80;
+    server_name harkonen.it18.com www.harkonen.it18.com;
+
+    root /var/www/html;
+
+    index index.html index.htm index.nginx-debian.html;
+
+    location / {
+        proxy_pass http://worker;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto \$scheme;
+    }
+}
+EOL
+
+# Aktifkan konfigurasi baru
+ln -sf /etc/nginx/sites-available/lb_php /etc/nginx/sites-enabled/
+
+# Hapus konfigurasi default jika ada
+if [ -f /etc/nginx/sites-enabled/default ]; then
+    rm /etc/nginx/sites-enabled/default
+fi
+
+# Restart layanan Nginx untuk menerapkan perubahan
+service nginx restart
+```
+
+c. Algoritma Least Connection
+```
+# Salin file konfigurasi default ke lb_php
+cp /etc/nginx/sites-available/default /etc/nginx/sites-available/lb_php
+
+# Tambahkan konfigurasi load balancing ke dalam lb_php
+# Least
+cat <<EOL > /etc/nginx/sites-available/lb_php
+upstream worker {
+    least_conn;
+    server 192.242.1.1;
+    server 192.242.1.2;
+    server 192.242.1.3;
+}
+
+server {
+    listen 80;
+    server_name harkonen.it18.com www.harkonen.it18.com;
+
+    root /var/www/html;
+
+    index index.html index.htm index.nginx-debian.html;
+
+    location / {
+        proxy_pass http://worker;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto \$scheme;
+    }
+}
+EOL
+
+# Aktifkan konfigurasi baru
+ln -sf /etc/nginx/sites-available/lb_php /etc/nginx/sites-enabled/
+
+# Hapus konfigurasi default jika ada
+if [ -f /etc/nginx/sites-enabled/default ]; then
+    rm /etc/nginx/sites-enabled/default
+fi
+
+# Restart layanan Nginx untuk menerapkan perubahan
+service nginx restart
+```
+
+d. Algoritma Round Robin
+```
+# Salin file konfigurasi default ke lb_php
+cp /etc/nginx/sites-available/default /etc/nginx/sites-available/lb_php
+
+# Tambahkan konfigurasi load balancing ke dalam lb_php
+# ROUND ROBIN
+cat <<EOL > /etc/nginx/sites-available/lb_php
+upstream worker {
+    server 192.242.1.1;
+    server 192.242.1.2;
+    server 192.242.1.3;
+}
+
+server {
+    listen 80;
+    server_name harkonen.it18.com www.harkonen.it18.com;
+
+    root /var/www/html;
+
+    index index.html index.htm index.nginx-debian.html;
+
+    location / {
+        proxy_pass http://worker;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto \$scheme;
+    }
+}
+EOL
+
+# Aktifkan konfigurasi baru
+ln -sf /etc/nginx/sites-available/lb_php /etc/nginx/sites-enabled/
+
+# Hapus konfigurasi default jika ada
+if [ -f /etc/nginx/sites-enabled/default ]; then
+    rm /etc/nginx/sites-enabled/default
+fi
+
+# Restart layanan Nginx untuk menerapkan perubahan
+service nginx restart
+```
+
+- Jalankan command `ab -n 500 -c 50 http://harkonen.it18.com/` pada Client untuk 500 request dan 50 request/second.
+
+- Apabila berhasil maka akan menampilkan output berikut : 
+
+a. Hasil Testing Generic Hash
+![generichash](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\generichash.png)
+
+b. Hasil Testing IP Hash
+![iphash](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\iphash.png)
+
+c. Hasil Testing Least Connection
+![least](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\least.png)
+
+d. Hasil Testing Round Robin
+![roundrobin](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\roundrobin.png)
+
+- Untuk Grafik Request Per Second seperti diagram batang berikut.
+![grafik](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\grafik.png)
+
+- Analisis bisa dicek pada link yang tertera di **Notes**
+---
 
 ## **Soal 9**
+> Dengan menggunakan algoritma Least-Connection, lakukan testing dengan menggunakan 3 worker, 2 worker, dan 1 worker sebanyak 1000 request dengan 10 request/second, kemudian tambahkan grafiknya pada peta. (9)
+
+- Sesuai dengan step pada langkah nomor sebelumnya, perbedaannya hanya terdapat pada script konfigurasi saja.
+
+a. Dengan 1 Worker
+```
+# Salin file konfigurasi default ke lb_php
+cp /etc/nginx/sites-available/default /etc/nginx/sites-available/lb_php
+
+# Tambahkan konfigurasi load balancing ke dalam lb_php
+# Least
+cat <<EOL > /etc/nginx/sites-available/lb_php
+upstream worker {
+    least_conn;
+    server 192.242.1.1;
+}
+
+server {
+    listen 80;
+    server_name harkonen.it18.com www.harkonen.it18.com;
+
+    root /var/www/html;
+
+    index index.html index.htm index.nginx-debian.html;
+
+    location / {
+        proxy_pass http://worker;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto \$scheme;
+    }
+}
+EOL
+
+# Aktifkan konfigurasi baru
+ln -sf /etc/nginx/sites-available/lb_php /etc/nginx/sites-enabled/
+
+# Hapus konfigurasi default jika ada
+if [ -f /etc/nginx/sites-enabled/default ]; then
+    rm /etc/nginx/sites-enabled/default
+fi
+
+# Restart layanan Nginx untuk menerapkan perubahan
+service nginx restart
+```
+
+b. Dengan 2 Worker
+```
+# Salin file konfigurasi default ke lb_php
+cp /etc/nginx/sites-available/default /etc/nginx/sites-available/lb_php
+
+# Tambahkan konfigurasi load balancing ke dalam lb_php
+# Least
+cat <<EOL > /etc/nginx/sites-available/lb_php
+upstream worker {
+    least_conn;
+    server 192.242.1.1;
+    server 192.242.1.2;
+}
+
+server {
+    listen 80;
+    server_name harkonen.it18.com www.harkonen.it18.com;
+
+    root /var/www/html;
+
+    index index.html index.htm index.nginx-debian.html;
+
+    location / {
+        proxy_pass http://worker;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto \$scheme;
+    }
+}
+EOL
+
+# Aktifkan konfigurasi baru
+ln -sf /etc/nginx/sites-available/lb_php /etc/nginx/sites-enabled/
+
+# Hapus konfigurasi default jika ada
+if [ -f /etc/nginx/sites-enabled/default ]; then
+    rm /etc/nginx/sites-enabled/default
+fi
+
+# Restart layanan Nginx untuk menerapkan perubahan
+service nginx restart
+```
+
+c. Dengan 3 Worker
+```
+# Salin file konfigurasi default ke lb_php
+cp /etc/nginx/sites-available/default /etc/nginx/sites-available/lb_php
+
+# Tambahkan konfigurasi load balancing ke dalam lb_php
+# Least
+cat <<EOL > /etc/nginx/sites-available/lb_php
+upstream worker {
+    least_conn;
+    server 192.242.1.1;
+    server 192.242.1.2;
+    server 192.242.1.3;
+}
+
+server {
+    listen 80;
+    server_name harkonen.it18.com www.harkonen.it18.com;
+
+    root /var/www/html;
+
+    index index.html index.htm index.nginx-debian.html;
+
+    location / {
+        proxy_pass http://worker;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto \$scheme;
+    }
+}
+EOL
+
+# Aktifkan konfigurasi baru
+ln -sf /etc/nginx/sites-available/lb_php /etc/nginx/sites-enabled/
+
+# Hapus konfigurasi default jika ada
+if [ -f /etc/nginx/sites-enabled/default ]; then
+    rm /etc/nginx/sites-enabled/default
+fi
+
+# Restart layanan Nginx untuk menerapkan perubahan
+service nginx restart
+```
+
+- Jalankan command `ab -n 1000 -c 10 http://harkonen.it18.com/` pada Client untuk 1000 request dan 10 request/second.
+
+- Apabila berhasil maka akan menampilkan output berikut : 
+a. Hasil Testing Dengan 1 Worker
+![dengan1worker](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\dengan1worker.png)
+
+b. Hasil Testing Dengan 2 Worker
+![dengan2worker](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\dengan2worker.png)
+
+c. Hasil Testing Dengan 3 Worker
+![dengan3worker](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\dengan3worker.png)
+---
 
 ## **Soal 10**
+> Selanjutnya coba tambahkan keamanan dengan konfigurasi autentikasi di LB dengan dengan kombinasi username: “secmart” dan password: “kcksyyy”, dengan yyy merupakan kode kelompok. Terakhir simpan file “htpasswd” nya di /etc/nginx/supersecret/ (10)
+
+- Dengan konfigurasi di Load Balancer yaitu Stilgar, jalankan `script.sh` dan `setup.sh`, serta buat script baru `no10.sh` yang berisikan pembuatan untuk username `secmart`.
+
+**no10.sh**
+```
+#!/bin/bash
+
+mkdir /etc/nginx/supersecret
+
+htpasswd -c /etc/nginx/supersecret/htpasswd secmart
+```
+
+- Setelahnya akan muncul perintah untuk permintaan password. Sesuai dengan soal maka password yang diinputkan adalah `kcksit18`.
+![inputpassword](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\inputpassword.png)
+
+- Kemudian buat script konfigurasi baru di `.bashrc` untuk `no10Lanjut.sh`
+
+**no10Lanjut.sh**
+```
+# Salin file konfigurasi default ke lb_php
+cp /etc/nginx/sites-available/default /etc/nginx/sites-available/lb_php
+
+# Tambahkan konfigurasi load balancing ke dalam lb_php
+cat <<EOL > /etc/nginx/sites-available/lb_php
+upstream worker {
+    server 192.242.1.1;
+    server 192.242.1.2;
+    server 192.242.1.3;
+}
+
+server {
+    listen 80;
+    server_name harkonen.it18.com www.harkonen.it18.com;
+
+    root /var/www/html;
+
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name _;
+
+    location / {
+        proxy_pass http://worker;
+        auth_basic "Restricted Content";
+        auth_basic_user_file /etc/nginx/supersecret/htpasswd;
+    }
+}
+EOL
+
+# Aktifkan konfigurasi baru
+ln -sf /etc/nginx/sites-available/lb_php /etc/nginx/sites-enabled/
+
+# Hapus konfigurasi default jika ada
+if [ -f /etc/nginx/sites-enabled/default ]; then
+    rm /etc/nginx/sites-enabled/default
+fi
+
+# Restart layanan Nginx untuk menerapkan perubahan
+service nginx restart
+```
+
+- Setelah tampilan seperti ini maka kita akan lanjut testing di Client.
+![no10Lanjut](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\no10Lanjut.png)
+
+- Lakukan testing di Dmitri, jalankan `script.sh`, dan command `lynx harkonen.it18.com`.
+
+- Pertama akan muncul Alert warning seperti ini.
+![alert](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\alert.png)
+
+- Setelahnya akan muncul tampilan ini dan masukkan username `secmart`.
+![secmart](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\secmart.png)
+
+- Input password `kcksit18`
+![password](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\password.png)
+
+- Apabila sudah seperti ini artinya sudah berhasil.
+![no10](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\no10.png)
+---
 
 ## **Soal 11**
 
@@ -117,6 +1094,7 @@ Setelah itu jalankan dengan command `lynx http://harkonen.it18.com/dune` pada cl
 ### Hasil Soal 11
 
 ![modul3_11](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/120791817/840251e5-598c-4f4e-8e86-09f0730336fa)
+---
 
 ## **Soal 12**
 
@@ -234,6 +1212,7 @@ Apabila dilakukan `lynx http://harkonen.it18.com/` pada client Dimitri, maka aka
 #### Testing pada Client Dimitri
 
 ![modul3_soal12a](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/120791817/fa55697b-67e6-4d3d-b4de-b79696197109)
+---
 
 ## **Soal 13**
 
@@ -699,6 +1678,7 @@ Setelah script selesai dan dijalankan pada masing-masing worker laravel, selanju
 ### Hasil Soal 14
 
 ![modul3_soal14](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/120791817/ae7a8264-58ea-4a37-9f9b-e06976f34366)
+---
 
 ## **Soal 15**
 
@@ -723,6 +1703,7 @@ ab -n 100 -c 10 -p register.json -T application/json http://192.242.2.2:8001/api
 ### Hasil Soal 15
 
 ![modul3_soal15](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/120791817/e4f63aeb-8faa-41d1-8c66-4c6978d1f6d2)
+---
 
 ## **Soal 16**
 
@@ -745,6 +1726,7 @@ ab -n 100 -c 10 -p login.json -T application/json http://192.242.2.2:8001/api/au
 ### Hasil Soal 16
 
 ![modul3_soal16](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/120791817/b14b77b0-c852-4e62-8e90-332b5906fa92)
+---
 
 ## **Soal 17**
 
@@ -763,6 +1745,7 @@ ab -n 100 -c 10 -H "Authorization: Bearer $token" http://192.242.2.2:8001/api/me
 ### Hasil Soal 17
 
 ![modul3_soal17](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/120791817/9e22a42e-e6ef-4df9-9eee-f584cb31dbf0)
+---
 
 ## **Soal 18**
 
@@ -811,6 +1794,7 @@ ab  -n 100 -c 10 -p register.json -T application/json http://atreides.it18.com/a
 
 - Jessica
 ![modul3_soal18jessica](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/120791817/b9cc7cb4-c3d8-4915-a9d6-a382a359aff2)
+---
 
 ## **Soal 19**
 
@@ -914,6 +1898,7 @@ ab -n 100 -c 10 -p login.json -T application/json http://atreides.it18.com/api/a
 - testing3.sh
 
 ![modul3_soal19test3](https://github.com/ellyzah/Jarkom-Modul-3-IT18-2024/assets/120791817/e0c2de0e-06b0-4968-bd84-c6e57de2e2bb)
+---
 
 ## **Soal 20**
 
@@ -948,8 +1933,15 @@ Setelah itu jalankan pada Stilgar, lalu testing menggunakan command berikut pada
 ```
 ab -n 100 -c 10 -p login.json -T application/json http://atreides.it18.com/api/auth/login
 ```
-
+---
+## **Kendala**
+- Terkadang bash `<script>.sh` sering error, awal-awal pengerjaan memang masih bisa, tetapi lama kelamaan terjadi error. Jadi harus dijalankan di hidden root. Bisa dibuat dan dijalankan dengan `nano /root/.bashrc` dan `source /root/.bashrc`
+---
 ## **Notes**
+
+Apabila tidak ingin script menghilang masuk ke dalam root terlebih dahulu dengan `cd`. 'semoga'
+
+Untuk nomor 0 - 10, disetiap awal mulai konfigurasi, diwajibkan untuk menjalankan `script.sh` mengantisipasi error pada command selanjutnya, isi `script.sh` bisa disesuaikan dengan bagian-bagian pengerjaan.
 
 Link Peta IT18 bisa dilihat [di sini! ](https://docs.google.com/document/d/1FOOV__UZe9O7gNeBkyqqwQiV6qZvSQbuiZW1eFQZbzI/edit)
 
