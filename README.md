@@ -1974,7 +1974,7 @@ ab -n 100 -c 10 -p login.json -T application/json http://atreides.it18.com/api/a
 
 ## **Kendala**
 - Terkadang bash `<script>.sh` sering error, awal-awal pengerjaan memang masih bisa, tetapi lama kelamaan terjadi error. Jadi harus dijalankan di hidden root. Bisa dibuat dan dijalankan dengan `nano /root/.bashrc` dan `source /root/.bashrc`
-
+- Harus sering reload node dan restart gns karena bug config sebelumnya masih tertinggal dan belum terupdate sehingga memakan waktu yang sangat lama untuk mengerjakan setiap step.
 ---
 
 ## **Notes**
@@ -2012,5 +2012,3 @@ Vladimir (PHP Worker) - 192.242.1.2
 Rabban (PHP Worker) - 192.242.1.3
 
 Feyd (PHP Worker) - 192.242.1.4
-
-
