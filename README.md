@@ -807,7 +807,7 @@ d. Hasil Testing Round Robin
 - Untuk Grafik Request Per Second seperti diagram batang berikut.
 ![grafik](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\grafik.png)
 
-- Analisis bisa dicek pada link yang tertera di **Notes**(#notes)
+- Analisis bisa dicek pada link yang tertera di [Notes](#notes)
 ---
 
 ## **Soal 9**
