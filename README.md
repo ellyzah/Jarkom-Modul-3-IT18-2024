@@ -31,12 +31,14 @@ Berikut adalah Laporan Resmi Praktikum Komunikasi Data & Jaringan Komputer Modul
 15. [Soal 19](#Soal-19)
 16. [Soal 20](#Soal-20)
 
-- [Notes](#Notes)
 - [Kendala](#kendala)
+- [Notes](#Notes)
+
 ---
 
 # Topologi
 ![topologi](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\topologi.png)
+
 ---
 
 # Konfigurasi
@@ -146,7 +148,7 @@ iface eth0 inet static
 	netmask 255.255.255.0
 	gateway 192.242.1.0
 ```
-- Dmitri & Paul(Client)
+- Dmitri & Paul (Client)
 ```
 auto eth0
 iface eth0 inet dhcp
@@ -156,13 +158,12 @@ iface eth0 inet dhcp
 ## **Soal 0 - 1**
 > Planet Caladan sedang mengalami krisis karena kehabisan spice, klan atreides berencana untuk melakukan eksplorasi ke planet arakis dipimpin oleh duke leto mereka meregister domain name atreides.yyy.com untuk worker Laravel mengarah pada Leto Atreides . Namun ternyata tidak hanya klan atreides yang berusaha melakukan eksplorasi, Klan harkonen sudah mendaftarkan domain name harkonen.yyy.com untuk worker PHP (0) mengarah pada Vladimir Harkonen
 
-> Lakukan konfigurasi sesuai dengan peta yang sudah diberikan.
-
+> (1) Lakukan konfigurasi sesuai dengan peta yang sudah diberikan.
 
 - Sebelum ini kita bisa melakukan setup untuk konfigurasi DHCP Server di Arakis, untuk ini bisa dibuat dan input dalam script berikut :
 
 **script.sh**
-```
+```bash
 echo nameserver 192.168.122.1 > /etc/resolv.conf
 echo /etc/resolv.conf
 ```
@@ -183,14 +184,14 @@ Untuk ini bisa isi dengan `eth1 eth2 eth3`
 
 ![relay_2](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\relay_2.png)
 
-Dan ini bisa lanjut klik Enter
+Dan ini bisa lanjut klik `Enter`
 
 ![relay_3](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\relay_3.png)
 
 - Selanjutnya jalankan `sysctl.sh` yang berisikan konfigurasi dari Arakis untuk Mohiam (DHCP Server) dengan command `./sysctl.sh`. 
 
 **sysctl.sh**
-```
+```bash
 #!/bin/bash
 
 cat > /etc/default/isc-dhcp-relay << EOL
@@ -215,7 +216,7 @@ Maka akan muncul output seperti ini :
 - Buat `script.sh` kembali.
 
 **script.sh**
-```
+```bash
 #!/bin/bash
 
 echo nameserver 192.168.122.1 > /etc/resolv.conf
@@ -294,22 +295,23 @@ service bind9 restart
 
 ![nomor0_1](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\nomor0_1.png)
 ![nomor0_2](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\nomor0_2.png)
+
 ---
 
 ## **Soal 2 - 5**
-> Kemudian, karena masih banyak spice yang harus dikumpulkan, bantulah para aterides untuk bersaing dengan harkonen dengan kriteria berikut.:
-- Semua CLIENT harus menggunakan konfigurasi dari DHCP Server.
-- Client yang melalui House Harkonen mendapatkan range IP dari [prefix IP].1.14 - [prefix IP].1.28 dan [prefix IP].1.49 - [prefix IP].1.70 (2)
-- Client yang melalui House Atreides mendapatkan range IP dari [prefix IP].2.15 - [prefix IP].2.25 dan [prefix IP].2 .200 - [prefix IP].2.210 (3)
-- Client mendapatkan DNS dari Princess Irulan dan dapat terhubung dengan internet melalui DNS tersebut (4)
-Durasi DHCP server meminjamkan alamat IP kepada Client yang melalui House Harkonen selama 5 menit sedangkan pada client yang melalui House Atreides selama 20 menit. Dengan waktu maksimal dialokasikan untuk peminjaman alamat IP selama 87 menit (5)
-_*house == switch_
+> Kemudian, karena masih banyak spice yang harus dikumpulkan, bantulah para aterides untuk bersaing dengan harkonen dengan kriteria berikut.
+> - Semua CLIENT harus menggunakan konfigurasi dari DHCP Server.
+> - Client yang melalui House Harkonen mendapatkan range IP dari [prefix IP].1.14 - [prefix IP].1.28 dan [prefix IP].1.49 - [prefix IP].1.70 (2)
+> - Client yang melalui House Atreides mendapatkan range IP dari [prefix IP].2.15 - [prefix IP].2.25 dan [prefix IP].2 .200 - [prefix IP].2.210 (3)
+> - Client mendapatkan DNS dari Princess Irulan dan dapat terhubung dengan internet melalui DNS tersebut (4)
+> - Durasi DHCP server meminjamkan alamat IP kepada Client yang melalui House Harkonen selama 5 menit sedangkan pada client yang melalui House Atreides selama 20 menit. Dengan waktu maksimal dialokasikan untuk peminjaman alamat IP selama 87 menit (5)
+**_*house == switch_**
 
 - Untuk soal ini pertama-tama lakukan setup konfigurasi di Mohiam (DHCP Server). Buat script baru `setupSubnet.sh`.
 Script ini berisi instalasi dependensi dibagian `apt-get` dan interfaces v4 dari `eth0`.
 
 **setupSubnet.sh**
-```
+```bash
 #!/bin/bash
 
 apt-get update
@@ -389,11 +391,12 @@ service isc-dhcp-server start
 
 ![nomor5Dmitri](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\nomor5Dmitri.png)
 ![nomor5Dmitri_2](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\nomor5Dmitri_2.png)
+
 ---
 
 ## **Soal 6**
 > Seiring berjalannya waktu kondisi semakin memanas, untuk bersiap perang. Klan Harkonen melakukan deployment sebagai berikut : 
-- Vladimir Harkonen memerintahkan setiap worker(harkonen) PHP, untuk melakukan konfigurasi virtual host untuk website berikut dengan menggunakan php 7.3. (6)
+> - Vladimir Harkonen memerintahkan setiap worker(harkonen) PHP, untuk melakukan konfigurasi virtual host untuk website berikut dengan menggunakan php 7.3. (6)
 
 - Untuk soal ini kita bisa setup konfigurasi di Vladimir dengan `script.sh` dengan menggunakan command `nano /root/.bashrc`.
 
@@ -453,6 +456,7 @@ echo 'server {
 
 ![localhostRabban](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\localhostRabban.png)
 ![localhostFeyd](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\localhostFeyd.png)
+
 ---
 
 ## **Soal 7**
@@ -463,7 +467,7 @@ echo 'server {
 - Setup Stilgar, jalankan `script.sh` dan `setup.sh`.
 
 **script.sh**
-```
+```bash
 #!/bin/bash
 
 echo nameserver 192.168.122.1 > /etc/resolv.conf
@@ -593,14 +597,15 @@ apt-get install jq -y
 ![no7Paul](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\no7Paul.png)
 
 *nb: untuk hasil output `ab` nomor 7 - 9 sebetulnya akan kurang lebih sama persis, hanya berbeda pada permintaan request yang disesuaikan soal saja*
+
 ---
 
 ## **Soal 8**
 > Karena diminta untuk menuliskan peta tercepat menuju spice, buatlah analisis hasil testing dengan 500 request dan 50 request/second masing-masing algoritma Load Balancer dengan ketentuan sebagai berikut:
-a. Nama Algoritma Load Balancer
-b. Report hasil testing pada Apache Benchmark
-c. Grafik request per second untuk masing masing algoritma. 
-d. Analisis (8)
+> a. Nama Algoritma Load Balancer
+> b. Report hasil testing pada Apache Benchmark
+> c. Grafik request per second untuk masing masing algoritma. 
+> d. Analisis (8)
 
 - Masih dengan konfigurasi yang kurang lebih sama dengan nomor 7, hanya berbeda pada konfigurasi sesuai algoritma yang perlu disesuaikan saja. Perubahan ini disimpan discript `bash.rc`.
 
@@ -802,7 +807,7 @@ d. Hasil Testing Round Robin
 - Untuk Grafik Request Per Second seperti diagram batang berikut.
 ![grafik](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\grafik.png)
 
-- Analisis bisa dicek pada link yang tertera di **Notes**
+- Analisis bisa dicek pada link yang tertera di **Notes**(#notes)
 ---
 
 ## **Soal 9**
@@ -953,6 +958,7 @@ b. Hasil Testing Dengan 2 Worker
 
 c. Hasil Testing Dengan 3 Worker
 ![dengan3worker](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\dengan3worker.png)
+
 ---
 
 ## **Soal 10**
@@ -961,7 +967,7 @@ c. Hasil Testing Dengan 3 Worker
 - Dengan konfigurasi di Load Balancer yaitu Stilgar, jalankan `script.sh` dan `setup.sh`, serta buat script baru `no10.sh` yang berisikan pembuatan untuk username `secmart`.
 
 **no10.sh**
-```
+```bash
 #!/bin/bash
 
 mkdir /etc/nginx/supersecret
@@ -1033,6 +1039,7 @@ service nginx restart
 
 - Apabila sudah seperti ini artinya sudah berhasil.
 ![no10](C:\ngoding banget\j4rk0m\Jarkom-Modul-3-IT18-2024\images\no10.png)
+
 ---
 
 ## **Soal 11**
